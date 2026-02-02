@@ -43,6 +43,9 @@ Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add')
 Route::get('/order/print/{orderCode}', [OrderController::class, 'printPaymentSlip'])
     ->name('order.print');
 
+Route::post('/admin/order/update-cooking-status/{id}', [OrderController::class, 'updateCookingStatus'])
+    ->name('order.updateCookingStatus');
+
 // Route::middleware(['user'])->group(function () {
 //     Route::post('/user/order/confirm', [OrderController::class, 'confirm'])
 //         ->name('order.confirm');

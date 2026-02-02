@@ -102,7 +102,7 @@
 
                                                 {{-- Logic for Chef: Cook Status 2 -> 3 --}}
                                                 @elseif (auth()->user()->role === 'chef' && $item->status == 2)
-                                                    <form action="{{ route('order.updateCookingStatus') }}" method="POST" style="display:inline;">
+                                                    <form action="{{ route('order.updateCookingStatus', $item->id ?? $item->order_code) }}" method="POST" style="display:inline;">
                                                         @csrf
                                                         <input type="hidden" name="order_code" value="{{ $item->order_code }}">
                                                         <input type="hidden" name="product_id" value="{{ $item->product_id }}">
